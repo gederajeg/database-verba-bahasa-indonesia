@@ -20,7 +20,9 @@ author:
       - corresponding: false 
     affiliations:
       - Universitas Sebelas Maret
-format: html
+format: 
+  html:
+    page-layout: full
 editor: visual
 bibliography: "https://api.citedrive.com/bib/d552fe3b-4481-4b90-85a9-a5568cdc0670/references.bib?x=eyJpZCI6ICJkNTUyZmUzYi00NDgxLTRiOTAtODVhOS1hNTU2OGNkYzA2NzAiLCAidXNlciI6ICIzODg0IiwgInNpZ25hdHVyZSI6ICI4YzNhNjU2ZGVkMjAyYTQ0NzgzODE1N2IxNzhiYTZjZDkxNDM5MmE4ZTE4ZmJmYjY0M2M0ODk0ZjQzZGY4NTVhIn0=/bibliography.bib"
 ---
@@ -32,6 +34,7 @@ Bank data ini dihasilkan dari data verba bahasa Indonesia berbasis korpus [@Raje
 ```{r setup, message = FALSE, echo = FALSE}
 library(tidyverse)
 library(reactable)
+library(htmltools)
 verba <- read_tsv("https://raw.githubusercontent.com/gederajeg/afiksasi-verba-bahasa-indonesia/main/verbs_main.txt") %>% 
   select(year, 
          form = word_form, 
@@ -44,7 +47,46 @@ verba <- read_tsv("https://raw.githubusercontent.com/gederajeg/afiksasi-verba-ba
          suff = suff_morphind #, 
          # affix = affix_morphind, 
          # affix_wclass = affix_morphind_wclass
-         )
+         ) %>% 
+  mutate(across(c(pref, root_POS, suff, genres), as.factor))
+
+# Select input filter with an "All" default option
+selectFilter <- function(tableId, style = "width: 100%; height: 100%;") {
+  function(values, name) {
+    tags$select(
+      # Set to undefined to clear the filter
+      onchange = sprintf("
+        const value = event.target.value
+        Reactable.setFilter('%s', '%s', value === '__ALL__' ? undefined : value)
+      ", tableId, name),
+      # "All" has a special value to clear the filter, and is the default option
+      tags$option(value = "__ALL__", "All"),
+      lapply(unique(values), tags$option),
+      "aria-label" = sprintf("Filter %s", name),
+      style = style
+    )
+  }
+}
+
+# Creates a data list column filter for a table with the given ID
+dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
+  function(values, name) {
+    dataListId <- sprintf("%s-%s-list", tableId, name)
+    tagList(
+      tags$input(
+        type = "text",
+        list = dataListId,
+        oninput = sprintf("Reactable.setFilter('%s', '%s', event.target.value || undefined)", tableId, name),
+        "aria-label" = sprintf("Filter %s", name),
+        style = style
+      ),
+      tags$datalist(
+        id = dataListId,
+        lapply(unique(values), function(value) tags$option(value = value))
+      )
+    )
+  }
+}
 ```
 
 ```{r print-table, echo = FALSE}
@@ -54,7 +96,8 @@ reactable(verba,
                                genres = "asc", 
                                freq = "desc"),
           style = list(fontFamily = "Work Sans, sans-serif", 
-                       fontSize = "0.75rem"),
+                       fontSize = "0.85rem"),
+          elementId = "tbl-input",
           compact = TRUE,
           resizable = FALSE,
           wrap = FALSE,
@@ -72,14 +115,7 @@ reactable(verba,
               ),
             genres = colDef(
               filterable = TRUE,
-              # Filter by case-insensitive text match
-              filterMethod = JS("function(rows, columnId, filterValue) {
-              const pattern = new RegExp(filterValue, 'i')
-              return rows.filter(function(row) {
-              return pattern.test(row.values[columnId])
-              })
-              }")
-              ),
+              filterInput = selectFilter("tbl-input")),
             root = colDef(
               filterable = TRUE,
               # Filter by case-insensitive text match
@@ -92,43 +128,46 @@ reactable(verba,
               ),
             morph = colDef(
               filterable = TRUE,
-              # Filter by case-insensitive text match
-              filterMethod = JS("function(rows, columnId, filterValue) {
-              const pattern = new RegExp(filterValue, 'i')
-              return rows.filter(function(row) {
-              return pattern.test(row.values[columnId])
-              })
+              filterInput = dataListFilter("tbl-input"),
+              # Exact match filter method
+              filterMethod = JS("(rows, columnId, filterValue) => {
+              return rows.filter(row => row.values[columnId] === filterValue)
               }")
+              # Filter by case-insensitive text match
+              #filterMethod = JS("function(rows, columnId, filterValue) {
+              #const pattern = new RegExp(filterValue, 'i')
+              #return rows.filter(function(row) {
+              #return pattern.test(row.values[columnId])
+              #})
+              #}")
               ),
             pref = colDef(
               filterable = TRUE,
-              # Filter by case-insensitive text match
-              filterMethod = JS("function(rows, columnId, filterValue) {
-              const pattern = new RegExp(filterValue, 'i')
-              return rows.filter(function(row) {
-              return pattern.test(row.values[columnId])
-              })
+              filterInput = dataListFilter("tbl-input"),
+              # Exact match filter method
+              filterMethod = JS("(rows, columnId, filterValue) => {
+              return rows.filter(row => row.values[columnId] === filterValue)
               }")
+              # filterInput = selectFilter("tbl-input")
               ),
             suff = colDef(
               filterable = TRUE,
-              # Filter by case-insensitive text match
-              filterMethod = JS("function(rows, columnId, filterValue) {
-              const pattern = new RegExp(filterValue, 'i')
-              return rows.filter(function(row) {
-              return pattern.test(row.values[columnId])
-              })
+              sticky = "left",
+              filterInput = dataListFilter("tbl-input"),
+              # Exact match filter method
+              filterMethod = JS("(rows, columnId, filterValue) => {
+              return rows.filter(row => row.values[columnId] === filterValue)
               }")
+              # filterInput = selectFilter("tbl-input")
               ),
             root_POS = colDef(
               filterable = TRUE,
-              # Filter by case-insensitive text match
-              filterMethod = JS("function(rows, columnId, filterValue) {
-              const pattern = new RegExp(filterValue, 'i')
-              return rows.filter(function(row) {
-              return pattern.test(row.values[columnId])
-              })
+              filterInput = dataListFilter("tbl-input"),
+              # Exact match filter method
+              filterMethod = JS("(rows, columnId, filterValue) => {
+              return rows.filter(row => row.values[columnId] === filterValue)
               }")
+              # filterInput = selectFilter("tbl-input")
               )
             # affix = colDef(
             #   filterable = TRUE,
