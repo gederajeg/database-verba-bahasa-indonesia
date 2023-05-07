@@ -27,11 +27,11 @@ editor: visual
 bibliography: "https://api.citedrive.com/bib/d552fe3b-4481-4b90-85a9-a5568cdc0670/references.bib?x=eyJpZCI6ICJkNTUyZmUzYi00NDgxLTRiOTAtODVhOS1hNTU2OGNkYzA2NzAiLCAidXNlciI6ICIzODg0IiwgInNpZ25hdHVyZSI6ICI4YzNhNjU2ZGVkMjAyYTQ0NzgzODE1N2IxNzhiYTZjZDkxNDM5MmE4ZTE4ZmJmYjY0M2M0ODk0ZjQzZGY4NTVhIn0=/bibliography.bib"
 ---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> <br />Bank data verba ini berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a> <br />Bank data verba ini berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-> Rajeg, G. P. W., & Denistia, K. (2023). Bank data verba bahasa Indonesia (Version 0.0.1) [Dataset]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
+> Rajeg, G. P. W., & Denistia, K. (2023). Bank data verba bahasa Indonesia (Version 0.0.1) \[Dataset\]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
 
-Bank data ini dihasilkan dari data verba bahasa Indonesia berbasis korpus [@Rajeg2023] yang melandasi bab buku bunga rampai [*Afiksasi Verba dalam Bahasa Indonesia*](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia). Bunga rampai tersebut merupakan bagian dari proyek penulisan buku Tata Bahasa Indonesia Kontemporer berbasis korpus.
+Bank data ini dihasilkan dari data verba bahasa Indonesia berbasis korpus [@Rajeg2023] yang melandasi bab buku [*Afiksasi Verba dalam Bahasa Indonesia*](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) ([rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share&t=6340) [@Rajeg2023a]). Bab buku tersebut akan terbit dalam bunga rampai sebagai bagian dari proyek penulisan buku Tatabahasa Bahasa Indonesia Kontemporer berbasis korpus ([rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share)).
 
 ```{r setup, message = FALSE, echo = FALSE}
 library(tidyverse)
@@ -96,8 +96,6 @@ dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
   background-color: #f5f8ff;
 }
 ```
-
-
 
 ```{r print-table, echo = FALSE}
 reactable(verba, 
