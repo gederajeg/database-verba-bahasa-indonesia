@@ -89,6 +89,14 @@ dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
 }
 ```
 
+```{css my-css, echo = FALSE}
+.my-row:hover {
+  background-color: #f5f8ff;
+}
+```
+
+
+
 ```{r print-table, echo = FALSE}
 reactable(verba, 
           minRows = 10, 
@@ -100,6 +108,7 @@ reactable(verba,
           elementId = "tbl-input",
           compact = TRUE,
           resizable = FALSE,
+          rowClass = "my-row",
           wrap = FALSE,
           columns = list(
             form = colDef(
@@ -118,6 +127,7 @@ reactable(verba,
               filterInput = selectFilter("tbl-input")),
             root = colDef(
               filterable = TRUE,
+              align = "center",
               # Filter by case-insensitive text match
               filterMethod = JS("function(rows, columnId, filterValue) {
               const pattern = new RegExp(filterValue, 'i')
@@ -143,6 +153,7 @@ reactable(verba,
               ),
             pref = colDef(
               filterable = TRUE,
+              align = "center",
               filterInput = dataListFilter("tbl-input"),
               # Exact match filter method
               filterMethod = JS("(rows, columnId, filterValue) => {
@@ -153,6 +164,7 @@ reactable(verba,
             suff = colDef(
               filterable = TRUE,
               sticky = "left",
+              align = "center",
               filterInput = dataListFilter("tbl-input"),
               # Exact match filter method
               filterMethod = JS("(rows, columnId, filterValue) => {
@@ -162,6 +174,7 @@ reactable(verba,
               ),
             root_POS = colDef(
               filterable = TRUE,
+              align = "center",
               filterInput = dataListFilter("tbl-input"),
               # Exact match filter method
               filterMethod = JS("(rows, columnId, filterValue) => {
