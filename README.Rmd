@@ -22,6 +22,11 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-Repositori ini menyimpan kode pemrograman R guna [menerbitkan secara daring](https://gederajeg.github.io/database-verba-bahasa-indonesia/) bank data verba bahasa Indonesia [@Rajeg2023] terkait proyek penulisan buku Tata Bahasa Indonesia Kontemporer berbasis korpus. Kunjungi [laman berikut](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) untuk informasi lebih lanjut.
+Repositori ini menyimpan kode pemrograman R guna [menerbitkan secara daring](https://gederajeg.github.io/database-verba-bahasa-indonesia/) bank data verba bahasa Indonesia [@Rajeg2023] terkait proyek penulisan buku Tata Bahasa Indonesia Kontemporer berbasis korpus. Berikut cara mengutip bank data verba bahasa Indonesia ini dalam format APA:
+
+> Rajeg, G. P. W., & Denistia, K. (2023). Bank data verba bahasa Indonesia (Version 0.0.1) [Dataset]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
+
+
+Kunjungi [laman berikut](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) untuk informasi lebih lanjut.
 
 ## Daftar Pustaka
