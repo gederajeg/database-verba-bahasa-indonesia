@@ -1,0 +1,153 @@
+---
+title: "Bank data verba bahasa Indonesia"
+author:
+  - name:
+      given: Gede Primahadi Wijaya
+      family: Rajeg
+    url: https://www.ling-phil.ox.ac.uk/people/gede-rajeg
+    orcid: 0000-0002-2047-8621
+    attributes:
+      - corresponding: true 
+    affiliations:
+      - University of Oxford
+      - Universitas Udayana
+  - name:
+      given: Karlina
+      family: Denistia
+    url: https://www.researchgate.net/profile/Karlina-Denistia
+    orcid: 0000-0002-1060-3548
+    attributes:
+      - corresponding: false 
+    affiliations:
+      - Universitas Sebelas Maret
+format: html
+editor: visual
+bibliography: "https://api.citedrive.com/bib/d552fe3b-4481-4b90-85a9-a5568cdc0670/references.bib?x=eyJpZCI6ICJkNTUyZmUzYi00NDgxLTRiOTAtODVhOS1hNTU2OGNkYzA2NzAiLCAidXNlciI6ICIzODg0IiwgInNpZ25hdHVyZSI6ICI4YzNhNjU2ZGVkMjAyYTQ0NzgzODE1N2IxNzhiYTZjZDkxNDM5MmE4ZTE4ZmJmYjY0M2M0ODk0ZjQzZGY4NTVhIn0=/bibliography.bib"
+---
+
+Bank data ini dihasilkan dari data verba bahasa Indonesia berbasis korpus yang melandasi bab buku bunga rampai [*Afiksasi Verba dalam Bahasa Indonesia*](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) [@Rajeg2023]. Bunga rampai tersebut merupakan bagian dari proyek penulisan buku Tata Bahasa Indonesia Kontemporer berbasis korpus.
+
+```{r setup, message = FALSE, echo = FALSE}
+library(tidyverse)
+library(reactable)
+verba <- read_tsv("https://raw.githubusercontent.com/gederajeg/afiksasi-verba-bahasa-indonesia/main/verbs_main.txt") %>% 
+  select(year, 
+         form = word_form, 
+         freq = n, 
+         genres, 
+         morph = morphind, 
+         pref = pref_morphind, 
+         root = root_morphind, 
+         root_POS = root_pos_morphind, 
+         suff = suff_morphind #, 
+         # affix = affix_morphind, 
+         # affix_wclass = affix_morphind_wclass
+         )
+```
+
+```{r print-table, echo = FALSE}
+reactable(verba, 
+          minRows = 10, 
+          defaultSorted = list(year = "asc", 
+                               genres = "asc", 
+                               freq = "desc"),
+          compact = TRUE,
+          resizable = FALSE,
+          wrap = FALSE,
+          columns = list(
+            form = colDef(
+              filterable = TRUE,
+              sticky = "left",
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              ),
+            genres = colDef(
+              filterable = TRUE,
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              ),
+            root = colDef(
+              filterable = TRUE,
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              ),
+            morph = colDef(
+              filterable = TRUE,
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              ),
+            pref = colDef(
+              filterable = TRUE,
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              ),
+            suff = colDef(
+              filterable = TRUE,
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              ),
+            root_POS = colDef(
+              filterable = TRUE,
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              )
+            # affix = colDef(
+            #   filterable = TRUE,
+            #   # Filter by case-insensitive text match
+            #   filterMethod = JS("function(rows, columnId, filterValue) {
+            #   const pattern = new RegExp(filterValue, 'i')
+            #   return rows.filter(function(row) {
+            #   return pattern.test(row.values[columnId])
+            #   })
+            #   }")
+            #   ),
+            # affix_wclass = colDef(
+            #   filterable = TRUE,
+            #   # Filter by case-insensitive text match
+            #   filterMethod = JS("function(rows, columnId, filterValue) {
+            #   const pattern = new RegExp(filterValue, 'i')
+            #   return rows.filter(function(row) {
+            #   return pattern.test(row.values[columnId])
+            #   })
+            #   }")
+            #   )
+            )
+          )
+```
+
+# Daftar pustaka
