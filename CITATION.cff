@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: If you use this database, please cite it using these metadata.
+title: Bank data verba bahasa Indonesia
+authors:
+  - family-names: Rajeg
+    given-names: Gede Primahadi Wijaya
+    orcid: "https://orcid.org/1234-5678-9101-1121"
+  - family-names: Denistia
+    given-names: Karlina
+    orcid: https://orcid.org/0000-0002-1060-3548
+version: 0.0.1
+date-released: "2023-05-07"
+identifiers:
+  - description: Repositori bank data verba bahasa Indonesia
+    type: doi
+    value: "10.17605/OSF.IO/NUXD4"
+license: cc-by-nc-4.0
+repository-code: "https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia"
