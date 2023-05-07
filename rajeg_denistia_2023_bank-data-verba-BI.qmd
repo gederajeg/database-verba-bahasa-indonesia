@@ -25,7 +25,9 @@ editor: visual
 bibliography: "https://api.citedrive.com/bib/d552fe3b-4481-4b90-85a9-a5568cdc0670/references.bib?x=eyJpZCI6ICJkNTUyZmUzYi00NDgxLTRiOTAtODVhOS1hNTU2OGNkYzA2NzAiLCAidXNlciI6ICIzODg0IiwgInNpZ25hdHVyZSI6ICI4YzNhNjU2ZGVkMjAyYTQ0NzgzODE1N2IxNzhiYTZjZDkxNDM5MmE4ZTE4ZmJmYjY0M2M0ODk0ZjQzZGY4NTVhIn0=/bibliography.bib"
 ---
 
-Bank data ini dihasilkan dari data verba bahasa Indonesia berbasis korpus yang melandasi bab buku bunga rampai [*Afiksasi Verba dalam Bahasa Indonesia*](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) [@Rajeg2023]. Bunga rampai tersebut merupakan bagian dari proyek penulisan buku Tata Bahasa Indonesia Kontemporer berbasis korpus.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> <br />Bank data verba ini berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+Bank data ini dihasilkan dari data verba bahasa Indonesia berbasis korpus [@Rajeg2023] yang melandasi bab buku bunga rampai [*Afiksasi Verba dalam Bahasa Indonesia*](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia). Bunga rampai tersebut merupakan bagian dari proyek penulisan buku Tata Bahasa Indonesia Kontemporer berbasis korpus.
 
 ```{r setup, message = FALSE, echo = FALSE}
 library(tidyverse)
