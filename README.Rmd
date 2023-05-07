@@ -26,7 +26,6 @@ Repositori ini menyimpan kode pemrograman R guna [menerbitkan secara daring](htt
 
 > Rajeg, G. P. W., & Denistia, K. (2023). Bank data verba bahasa Indonesia (Version 0.0.1) [Dataset]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
 
-
 Kunjungi [laman berikut](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) untuk informasi lebih lanjut.
 
 ## Daftar Pustaka
