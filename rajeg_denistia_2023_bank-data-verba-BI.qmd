@@ -111,6 +111,10 @@ reactable(verba,
           rowClass = "my-row",
           wrap = FALSE,
           columns = list(
+            year = colDef(
+              filterable = TRUE,
+              filterInput = selectFilter("tbl-input")
+              ),
             form = colDef(
               filterable = TRUE,
               sticky = "left",
