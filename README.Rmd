@@ -2,7 +2,8 @@
 output: github_document
 date: '07 May 2023'
 link-citations: true
-title: 'Bank data verba Bahasa Indonesia'
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/unified-style-sheet-for-linguistics.csl"
+title: '*VerbInd*: Pangkalan data verba Bahasa Indonesia berbasis korpus'
 author: '[Gede Primahadi Wijaya Rajeg](https://udayananetworking.unud.ac.id/lecturer/880-gede-primahadi-wijaya-rajeg) <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a> & [Karlina Denistia](https://www.researchgate.net/profile/Karlina-Denistia) <a itemprop="sameAs" content="http://orcid.org/0000-0002-1060-3548" href="http://orcid.org/0000-0002-1060-3548" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
 bibliography: "https://api.citedrive.com/bib/d552fe3b-4481-4b90-85a9-a5568cdc0670/references.bib?x=eyJpZCI6ICJkNTUyZmUzYi00NDgxLTRiOTAtODVhOS1hNTU2OGNkYzA2NzAiLCAidXNlciI6ICIzODg0IiwgInNpZ25hdHVyZSI6ICI4YzNhNjU2ZGVkMjAyYTQ0NzgzODE1N2IxNzhiYTZjZDkxNDM5MmE4ZTE4ZmJmYjY0M2M0ODk0ZjQzZGY4NTVhIn0=/bibliography.bib"
 ---
@@ -18,13 +19,13 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> <br />Bank data verba dan kode pemrograman R dalam repositori GitHub ini berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> <br />*VerbInd* dan kode pemrograman R dalam repositori GitHub ini berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 <!-- badges: end -->
 
-Repositori ini menyimpan kode pemrograman R guna [menerbitkan secara daring](https://gederajeg.github.io/database-verba-bahasa-indonesia/) bank data verba bahasa Indonesia [@Rajeg2023] terkait proyek penulisan buku Tata Bahasa Indonesia Kontemporer berbasis korpus. Berikut cara mengutip bank data verba bahasa Indonesia ini dalam format APA:
+Repositori ini menyimpan kode pemrograman R yang melandasi *[VerbInd](https://gederajeg.github.io/database-verba-bahasa-indonesia/)*, sebuah pangkalan data digital verba bahasa Indonesia [@Rajeg_Bank_data_verba_2023; @Rajeg2023]. *VerbInd* merupakan luaran data terkait proyek penulisan bab buku [@Rajeg2023a] sebagai bagian dari penyusunan Tatabahasa Bahasa Indonesia Kontemporer berbasis korpus. Berikut cara mengutip VerbInd dalam format APA:
 
-> Rajeg, G. P. W., & Denistia, K. (2023). Bank data verba bahasa Indonesia (Version 0.0.1) [Dataset]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
+> Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data verba bahasa Indonesia berbasis korpus (Version 0.0.1) [Dataset]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
 
 Kunjungi [laman berikut](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) untuk informasi lebih lanjut.
 
