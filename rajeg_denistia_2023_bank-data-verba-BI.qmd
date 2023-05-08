@@ -1,5 +1,5 @@
 ---
-title: "Bank data verba bahasa Indonesia"
+title: "*VerbInd*: Pangkalan data verba bahasa Indonesia berbasis korpus"
 author:
   - name:
       given: Gede Primahadi Wijaya
@@ -25,13 +25,22 @@ format:
     page-layout: full
 editor: visual
 bibliography: "https://api.citedrive.com/bib/d552fe3b-4481-4b90-85a9-a5568cdc0670/references.bib?x=eyJpZCI6ICJkNTUyZmUzYi00NDgxLTRiOTAtODVhOS1hNTU2OGNkYzA2NzAiLCAidXNlciI6ICIzODg0IiwgInNpZ25hdHVyZSI6ICI4YzNhNjU2ZGVkMjAyYTQ0NzgzODE1N2IxNzhiYTZjZDkxNDM5MmE4ZTE4ZmJmYjY0M2M0ODk0ZjQzZGY4NTVhIn0=/bibliography.bib"
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/unified-style-sheet-for-linguistics.csl"
 ---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a> <br />Bank data verba ini berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+# Pengantar
 
-> Rajeg, G. P. W., & Denistia, K. (2023). Bank data verba bahasa Indonesia (Version 0.0.1) \[Dataset\]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a> <br />*VerbInd* berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-Bank data ini dihasilkan dari data verba bahasa Indonesia berbasis korpus [@Rajeg2023] yang melandasi bab buku [*Afiksasi Verba dalam Bahasa Indonesia*](https://github.com/gederajeg/afiksasi-verba-bahasa-indonesia) ([rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share&t=6340) [@Rajeg2023a]). Bab buku tersebut akan terbit dalam bunga rampai sebagai bagian dari proyek penulisan buku Tatabahasa Bahasa Indonesia Kontemporer berbasis korpus ([rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share)).
+-----------------
+
+Berikut adalah cara mengutip *VerbInd* ketika dirujuk dalam penelitian dan/atau pengajaran bahasa Indonesia:
+
+> Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data verba bahasa Indonesia berbasis korpus (Version 0.0.1) \[Dataset\]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
+
+*VerbInd* dibangun dari pangkalan data leksikal verba bahasa Indonesia berbasis korpus [@Rajeg2023]. Pangkalan data tersebut melandasi bab buku berjudul [*Afiksasi Verba dalam Bahasa Indonesia*](https://doi.org/10.6084/m9.figshare.22336729) [@Rajeg2023a], yang akan terbit dalam bunga rampai sebagai bagian dari proyek penulisan buku Tatabahasa Bahasa Indonesia Kontemporer berbasis korpus ([flyer seminar hasil](https://www.facebook.com/photo?fbid=581508360693816&set=a.227078366136819) dan [rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share)).
+
+# Tabel data
 
 ```{r setup, message = FALSE, echo = FALSE}
 library(tidyverse)
@@ -97,9 +106,13 @@ dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
 }
 ```
 
+
+*VerbInd* dihasilkan dari Korpus Bahasa Indonesia Kontemporer yang dikumpulkan oleh Pusat Pengembangan dan Pelindungan Bahasa dan Sastra, Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. *VerbInd* terdiri atas `r ncol(verba)` kolom. Kolom `year` menunjukkan informasi tahun sumber teks korpusnya, sedangkan `genres` merupakan jenis ragam teks di dalam korpus. Kolom `freq` menunjukkan berapa kali verba dalam kolom `form` muncul di suatu ragam teks pada tahun tertentu. Kolom `morph` adalah luaran analisis pemilahan struktur morfologis kata menggunakan *MorphInd* [@larasati_indonesian_2011], yang telah dan terus akan diperbaiki secara manual jika terdapat kekeliruan. Kolom `pref` (prefiks/awalan), `root` (akar kata), `root_POS` (kelas kata akar kata), dan `suff` (sufiks/akhiran) diekstraksi dari komponen luaran *MorphInd*.
+
 ```{r print-table, echo = FALSE}
 reactable(verba, 
-          minRows = 10, 
+          defaultPageSize = 20,
+          showPageInfo = TRUE,
           defaultSorted = list(year = "asc", 
                                genres = "asc", 
                                freq = "desc"),
@@ -207,7 +220,8 @@ reactable(verba,
             #   }")
             #   )
             )
-          )
+          ) %>% 
+  reactablefmtr::add_title("Frekuensi verba bahasa Indonesia menurut ragam teks dan tahun", align = "left", font_color = "royalblue1", font_size = 20, margin = c(5,5,10,5))
 ```
 
 # Daftar pustaka
