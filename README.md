@@ -27,7 +27,7 @@ sebuah pangkalan data digital verba bahasa Indonesia ([Rajeg & Denistia
 2023b](#ref-Rajeg2023)). *VerbInd* merupakan luaran data terkait proyek
 penulisan bab buku ([Rajeg & Denistia 2023a](#ref-Rajeg2023a)) sebagai
 bagian dari penyusunan Tatabahasa Bahasa Indonesia Kontemporer berbasis
-korpus. Berikut cara mengutip VerbInd dalam format APA:
+korpus. Berikut cara mengutip *VerbInd* dalam format APA:
 
 > Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data
 > verba bahasa Indonesia berbasis korpus (Version 0.0.1) \[Dataset\].
