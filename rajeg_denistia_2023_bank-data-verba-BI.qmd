@@ -38,7 +38,7 @@ Berikut adalah cara mengutip *VerbInd* ketika dirujuk dalam penelitian dan/atau 
 
 > Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data verba bahasa Indonesia berbasis korpus (Version 0.0.1) \[Dataset\]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
 
-*VerbInd* dibangun dari pangkalan data leksikal verba bahasa Indonesia berbasis korpus [@Rajeg2023]. Pangkalan data tersebut melandasi bab buku berjudul [*Afiksasi Verba dalam Bahasa Indonesia*](https://doi.org/10.6084/m9.figshare.22336729) [@Rajeg2023a], yang akan terbit dalam bunga rampai sebagai bagian dari proyek penulisan buku Tatabahasa Bahasa Indonesia Kontemporer berbasis korpus ([flyer seminar hasil](https://www.facebook.com/photo?fbid=581508360693816&set=a.227078366136819) dan [rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share)).
+*VerbInd* dibangun dari pangkalan data leksikal verba bahasa Indonesia berbasis korpus [@Rajeg2023]. Pangkalan data tersebut melandasi bab buku berjudul [*Afiksasi Verba dalam Bahasa Indonesia*](https://doi.org/10.6084/m9.figshare.22336729) [@Rajeg2023a], yang akan terbit dalam bunga rampai sebagai bagian dari proyek penulisan buku Tatabahasa Bahasa Indonesia Kontemporer (TBIK) berbasis korpus ([flyer seminar hasil](https://www.facebook.com/photo?fbid=581508360693816&set=a.227078366136819) dan [rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share)).
 
 # Tabel data
 
