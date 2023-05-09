@@ -12,6 +12,7 @@ Denistia](https://www.researchgate.net/profile/Karlina-Denistia)
 <!-- badges: start -->
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+[![](https://img.shields.io/badge/doi-10.17605/OSF.IO/VQGKX-blue.svg)](https://doi.org/10.17605/OSF.IO/VQGKX)
 <br />*VerbInd* dan kode pemrograman R dalam repositori GitHub ini
 berlisensi
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
@@ -19,6 +20,8 @@ Commons Attribution-NonCommercial-ShareAlike 4.0 International
 License</a>.
 
 <!-- badges: end -->
+
+------------------------------------------------------------------------
 
 Repositori ini menyimpan kode pemrograman R yang melandasi
 *[VerbInd](https://gederajeg.github.io/database-verba-bahasa-indonesia/)*,
@@ -31,6 +34,7 @@ korpus. Berikut cara mengutip *VerbInd* dalam format APA:
 
 > Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data
 > verba bahasa Indonesia berbasis korpus (Version 0.0.1) \[Dataset\].
+> <https://doi.org/10.17605/OSF.IO/VQGKX>
 > <https://gederajeg.github.io/database-verba-bahasa-indonesia/>
 
 Kunjungi [laman
