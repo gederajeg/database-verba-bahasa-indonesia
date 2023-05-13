@@ -224,4 +224,87 @@ reactable(verba,
   reactablefmtr::add_title("Frekuensi verba bahasa Indonesia menurut ragam teks dan tahun", align = "left", font_color = "royalblue1", font_size = 20, margin = c(5,5,10,5))
 ```
 
+
+```{r unique-data-preparation, echo = FALSE, message = FALSE, warning = FALSE}
+# create a summarised data without year and genres
+# and remove the form with final hypen (asuming it is part of reduplication)
+verba_unique_form <- verba %>% 
+  select(-year, -genres) %>% 
+  filter(str_detect(form, "\\-$", negate = TRUE)) %>% 
+  distinct() %>% 
+  group_by(form, morph, pref, root, root_POS, suff) %>% 
+  summarise(freq = sum(freq)) %>% 
+  arrange(pref, root, desc(freq))
+verba_unique_form1 <- verba_unique_form %>% 
+  group_by(morph, pref, root, root_POS, suff) %>% 
+  mutate(n_form = n_distinct(form),
+         form2 = paste(paste(form, " (", freq, ")", sep = ""), collapse = "; ")) %>% 
+  arrange(desc(form2))
+verba_unique_form2 <- verba_unique_form1 %>% 
+  group_by(morph, pref, root, root_POS, suff, form2, n_form) %>% 
+  summarise(freq = sum(freq)) %>% 
+  mutate(form = str_extract(form2,
+                            "^[^ ]+(?=\\s)"),
+         form = if_else(n_form > 1, 
+                        str_extract(form2, 
+                                    "((?<=\\s)|(?<=^))[a-z]+(?=\\s)"
+                                    ), 
+                        form),
+         form2 = if_else(n_form == 1, "", form2))
+```
+
+
+
+
+
+
+```{r unique-data-print, echo = FALSE, message = FALSE, warning = FALSE}
+nested_info_id <- which(verba_unique_form2$n_form > 1)
+tb <- select(verba_unique_form2,
+             form, 
+             orth_var = form2, 
+             morph, pref, root, root_POS, suff, freq)
+tb_main <- select(ungroup(tb), form, root, freq)
+reactable(tb_main, 
+          columns = list(
+            form = colDef(filterable = TRUE,
+              sticky = "left",
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              ),
+            root = colDef(
+              filterable = TRUE,
+              align = "center",
+              # Filter by case-insensitive text match
+              filterMethod = JS("function(rows, columnId, filterValue) {
+              const pattern = new RegExp(filterValue, 'i')
+              return rows.filter(function(row) {
+              return pattern.test(row.values[columnId])
+              })
+              }")
+              )
+          ),
+          style = list(fontFamily = "Work Sans, sans-serif", 
+                       fontSize = "0.85rem"),
+          details = function(index) {
+            if (index %in% nested_info_id) {
+              orth_var_data <- tb[index, ] %>% 
+                ungroup() %>% 
+                select(-form, -freq, -root)
+              htmltools::div(style = "padding: 1rem", reactable(orth_var_data, outlined = TRUE, resizable = TRUE, fullWidth = TRUE))
+              # htmltools::tags$button(type = "button", reactable(orth_var_data, outlined = TRUE, resizable = TRUE, fullWidth = TRUE))
+              
+            }
+            }) %>% 
+  reactablefmtr::add_title("Frekuensi verba bahasa Indonesia keseluruhan", align = "left", font_color = "royalblue1", font_size = 20, margin = c(5,5,10,5))
+```
+
+
+
+
 # Daftar pustaka
