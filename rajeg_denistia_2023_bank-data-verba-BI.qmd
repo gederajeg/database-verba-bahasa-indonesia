@@ -223,7 +223,7 @@ reactable(verba,
           ) %>% 
   reactablefmtr::add_title("Frekuensi verba bahasa Indonesia menurut ragam teks dan tahun", align = "left", font_color = "royalblue1", font_size = 20, margin = c(5,5,10,5))
 ```
-
+Tabel berikut menampilkan gabungan frekuensi tiap-tiap bentuk kata (`form`) dari keseluruhan ragam teks dan tahun.
 
 ```{r unique-data-preparation, echo = FALSE, message = FALSE, warning = FALSE}
 # create a summarised data without year and genres
