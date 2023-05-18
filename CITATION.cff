@@ -1,6 +1,7 @@
 cff-version: 1.2.0
-message: If you use this database, please cite it using these metadata.
-title: VèrbInd: Pangkalan data verba bahasa Indonesia berbasis korpus
+message: "If you use this database, please cite as below."
+type: dataset
+title: "VerbInd: Pangkalan data verba bahasa Indonesia berbasis korpus"
 authors:
   - family-names: Rajeg
     given-names: Gede Primahadi Wijaya
