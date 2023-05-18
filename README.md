@@ -12,6 +12,7 @@ Denistia](https://www.researchgate.net/profile/Karlina-Denistia)
 <!-- badges: start -->
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+[![](https://img.shields.io/badge/doi-10.5281/zenodo.7947605-blue.svg)](https://doi.org/10.5281/zenodo.7947605)
 [![](https://img.shields.io/badge/doi-10.17605/OSF.IO/VQGKX-blue.svg)](https://doi.org/10.17605/OSF.IO/VQGKX)
 <br />*VerbInd* dan kode pemrograman R dalam repositori GitHub ini
 berlisensi
