@@ -25,6 +25,9 @@ format:
     page-layout: full
 google-scholar: true
 appendix-cite-as: display
+date: 2023-05-18
+date-modified: now
+doi: 10.5281/zenodo.7947605
 citation: 
   type: dataset
   publisher: Zenodo
