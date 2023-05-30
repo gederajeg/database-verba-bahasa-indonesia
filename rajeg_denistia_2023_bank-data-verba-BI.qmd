@@ -283,7 +283,7 @@ reactable(tb_main,
               }")
               ),
             root = colDef(
-              filterable = TRUE,
+              filterable = TRUE, 
               align = "center",
               # Filter by case-insensitive text match
               filterMethod = JS("function(rows, columnId, filterValue) {
