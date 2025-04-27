@@ -32,7 +32,7 @@ citation:
   type: dataset
   publisher: Zenodo
   doi: 10.5281/zenodo.7947605
-  version: 0.0.1
+  version: 1.0.0
 editor: visual
 csl: "unified-style-sheet-for-linguistics.csl"
 bibliography: references.bib
@@ -46,13 +46,13 @@ bibliography: references.bib
 
 Berikut adalah cara mengutip *VerbInd* ketika dirujuk dalam penelitian dan/atau pengajaran bahasa Indonesia:
 
-> Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data verba bahasa Indonesia berbasis korpus (Version 0.0.1) \[Dataset\]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
+> Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data verba bahasa Indonesia berbasis korpus (Version 1.0.0) \[Dataset\]. https://gederajeg.github.io/database-verba-bahasa-indonesia/
 
 *VerbInd* dibangun dari pangkalan data leksikal verba bahasa Indonesia berbasis korpus [@rajeg2023]. Pangkalan data tersebut melandasi bab buku berjudul [*Afiksasi Verba dalam Bahasa Indonesia*](https://doi.org/10.6084/m9.figshare.22336729) [@rajeg2023a], yang akan terbit dalam bunga rampai sebagai bagian dari proyek penulisan buku Tatabahasa Bahasa Indonesia Kontemporer (TBIK) berbasis korpus ([flyer seminar hasil](https://www.facebook.com/photo?fbid=581508360693816&set=a.227078366136819) dan [rekaman seminar hasil](https://www.youtube.com/live/fD70Nhs6vug?feature=share)).
 
 # Tabel data
 
-```{r setup, message = FALSE, echo = FALSE}
+```{r setup, message = FALSE, echo = FALSE, warning = FALSE}
 library(tidyverse)
 library(reactable)
 library(htmltools)
@@ -239,9 +239,9 @@ Tabel berikut menampilkan gabungan frekuensi tiap-tiap bentuk kata (`form`) dari
 # create a summarised data without year and genres
 # and remove the form with final hypen (asuming it is part of reduplication)
 verba_unique_form <- verba %>% 
-  select(-year, -genres) %>% 
+  # select(-year, -genres) %>% 
   filter(str_detect(form, "\\-$", negate = TRUE)) %>% 
-  distinct() %>% 
+  # distinct() %>% 
   group_by(form, morph, pref, root, root_POS, suff) %>% 
   summarise(freq = sum(freq)) %>% 
   arrange(pref, root, desc(freq))
