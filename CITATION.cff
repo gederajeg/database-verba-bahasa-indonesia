@@ -9,8 +9,8 @@ authors:
   - family-names: Denistia
     given-names: Karlina
     orcid: https://orcid.org/0000-0002-1060-3548
-version: 0.0.1
-date-released: "2023-05-07"
+version: 1.0.0
+date-released: "2025-04-27"
 identifiers:
   - description: Repositori pangkalan data verba bahasa Indonesia
     type: doi

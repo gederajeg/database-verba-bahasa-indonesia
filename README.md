@@ -29,12 +29,14 @@ Repositori ini menyimpan kode pemrograman R yang melandasi
 sebuah pangkalan data digital verba bahasa Indonesia ([Rajeg & Denistia
 2023c](#ref-Rajeg_Bank_data_verba_2023); [Rajeg & Denistia
 2023b](#ref-Rajeg2023)). *VerbInd* merupakan luaran data terkait proyek
-penulisan bab buku ([Rajeg & Denistia 2023a](#ref-Rajeg2023a)) sebagai
-bagian dari penyusunan Tatabahasa Bahasa Indonesia Kontemporer berbasis
-korpus. Berikut cara mengutip *VerbInd* dalam format APA:
+penulisan bab buku
+([PDF](https://ora.ox.ac.uk/objects/uuid:ad496412-7b2d-4b88-b9c1-8b20db52dbac))
+([Rajeg & Denistia 2023a](#ref-Rajeg2023a)) sebagai bagian dari
+penyusunan Tatabahasa Bahasa Indonesia Kontemporer berbasis korpus.
+Berikut cara mengutip *VerbInd* dalam format APA:
 
 > Rajeg, G. P. W., & Denistia, K. (2023). *VerbInd*: Pangkalan data
-> verba bahasa Indonesia berbasis korpus (Version 0.0.1) \[Dataset\].
+> verba bahasa Indonesia berbasis korpus (Version 1.0.0) \[Dataset\].
 > <https://doi.org/10.17605/OSF.IO/VQGKX>
 > <https://gederajeg.github.io/database-verba-bahasa-indonesia/>
 
@@ -44,12 +46,13 @@ untuk informasi lebih lanjut.
 
 ## Daftar Pustaka
 
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
 
 <div id="ref-Rajeg2023a" class="csl-entry">
 
-Rajeg, Gede Primahadi Wijaya & Karlina Denistia. 2023a. <span
-class="nocase">Afiksasi Verba dalam Bahasa Indonesia</span>.
+Rajeg, Gede Primahadi Wijaya & Karlina Denistia. 2023a.
+<span class="nocase">Afiksasi Verba dalam Bahasa Indonesia</span>.
 <https://doi.org/10.6084/m9.figshare.22336729>.
 
 </div>
@@ -64,8 +67,8 @@ pendukung untuk *afiksasi verba dalam bahasa indonesia*.
 
 <div id="ref-Rajeg_Bank_data_verba_2023" class="csl-entry">
 
-Rajeg, Gede Primahadi Wijaya & Karlina Denistia. 2023c. **VerbInd*:
-Pangkalan data verba bahasa indonesia*.
+Rajeg, Gede Primahadi Wijaya & Karlina Denistia. 2023c. *VerbInd*:
+Pangkalan data verba bahasa indonesia.
 <https://github.com/gederajeg/database-verba-bahasa-indonesia>.
 
 </div>
